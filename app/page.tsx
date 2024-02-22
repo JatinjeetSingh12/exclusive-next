@@ -1,7 +1,9 @@
+import Categories from "./components/Home/Categories";
+
 export default function Home() {
   return (
     <div>
-      hello
+      <Categories />
     </div>
   );
 }

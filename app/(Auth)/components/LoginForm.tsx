@@ -12,8 +12,8 @@ const LoginForm = () => {
                     Enter your details below
                 </p>
 
-                <input className='border-b-[1px] mt-[30px] border-black' placeholder='Email or Phone Number' />
-                <input className='border-b-[1px] mt-[30px] border-black' placeholder='Password' />
+                <input className='border-b-[1px] outline-none mt-[30px] border-black' placeholder='Email or Phone Number' />
+                <input className='border-b-[1px] outline-none mt-[30px] border-black' placeholder='Password' />
                 <div className='flex items-center justify-between mt-[20px]'>
                     <div className='bg-red-500 text-white px-[35px] py-[12px] rounded-md items-center '>
                         <p className='text-[10px]'>Log in</p>

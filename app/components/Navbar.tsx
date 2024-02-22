@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className={pathname=='/about'?'border-b-2 border-black':'text-black'}>
                     <Link href={'/about'}>About</Link>
                     </div>
-                    <div className={pathname=='/signup'||pathname=='/login'?'border-b-2 border-black':'text-black'}>
+                    <div className={pathname=='/signup'?'border-b-2 border-black':'text-black'}>
                     <Link href={'/signup'}>Sign Up</Link>
                     </div>
                 </div>
