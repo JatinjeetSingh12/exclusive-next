@@ -1,96 +1,56 @@
-'use client'
-import { carouselData, categories, Categories } from '@/app/data/HomeData'
+import { categoriesData } from '@/app/data/HomeData'
+import { Colors } from '@/app/styles/Colors'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { RxDotFilled } from "react-icons/rx";
-
-
+import React from 'react'
 
 const Categories = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const onNext = () => {
-        const lastIndex = currentIndex === carouselData.length - 1;
-        const nextIndex = lastIndex ? 0 : currentIndex + 1;
-        setCurrentIndex(nextIndex);
-    }
-
-    const onPrev = () => {
-        const firstIndex = currentIndex === 0;
-        const prevIndex = firstIndex ? carouselData.length - 1 : currentIndex - 1;
-        setCurrentIndex(prevIndex);
-    }
-
-    const goToSlide = (index: number) => {
-        setCurrentIndex(index);
-    }
-
-    let intervalId: any;
-
-    const startInterval = () => {
-        intervalId = setInterval(() => {
-            const lastIndex = currentIndex === carouselData.length - 1;
-            const nextIndex = lastIndex ? 0 : currentIndex + 1;
-            setCurrentIndex(nextIndex);
-        }, 3000);
-    };
-
-    useEffect(() => {
-        startInterval();
-
-        return () => {
-            clearInterval(intervalId);
-        };
-
-    }, [currentIndex]);
-
     return (
-        <>
-            <div className='flex max-h-[350px]  '>
-                <div className='flex  w-[25%] justify-end pr-[10px] border-r-2'>
-                    <div className='flex  mt-[20px] gap-[14px] flex-col align-center w-[60%]   '>
-                        {categories.map((item: Categories) => (
-                            <div className='flex justify-between'
-                                key={item.id}>
-                                <p className='text-[16px] font-semibold'>{item.name}</p>
-                                {item.subCategoriesCheck &&
-                                    <p>{">"}</p>
-                                }
-                            </div>
+        <div className='w-full flex flex-col items-center justify-center '>
+
+            <div className='w-[85%]  '>
+
+                <div className='flex items-center gap-[15px]'>
+                    <div style={{ backgroundColor: Colors.red }} className='w-[20px] rounded-sm  h-[40px]'>
+                    </div>
+                    <p style={{ color: Colors.red }} className='font-bold'>Categories</p>
+                </div>
+                <div className='flex mt-[20px]'>
+                    <p className='text-[26px] font-bold'>Browse By Category</p>
+                </div>
+
+                <Carousel
+                    opts={{
+                        align: "start",
+                    }}
+                    className="w-full"
+                >
+                    <CarouselContent   className='px-[15px] py-[20px] '>
+                        {categoriesData.map((item, index) => (
+                            <CarouselItem key={index} className=" rounded-md cursor-pointer transition ease-in-out hover:scale-110  flex border-gray-500  items-center justify-center border-[1px]   lg:basis-1/6 mx-[15px] group max-w-[170px] min-w-[170px] h-[145px]">
+                                <div className='flex flex-col gap-2   rounded-md items-center justify-center'>
+                                    <Image src={item.img} alt='img'  />
+                                    <p>{item.name}</p>
+                                </div>
+                            </CarouselItem>
                         ))}
+                    </CarouselContent>
+
+                    <div className='absolute top-[-23px] right-[100px] '>
+                        <CarouselPrevious />
+                        <CarouselNext />
                     </div>
-                </div>
+                </Carousel>
 
-                {/* carousal */}
-                <div className='flex w-[75%]'>
-                    <div className='w-[85%]  h-[90%] m-auto relative group '>
 
-                        <Image src={carouselData[currentIndex].image} alt='img' className='w-full h-full absolute rounded-sm' />
 
-                        {/* left arrow */}
-                        <div onClick={onPrev} className='hidden group-hover:block absolute items-center justify-center cursor-pointer top-[50%] left-[5px] rounded-2xl p-[2px] bg-white/30'>
-                            <FaAngleLeft color='black' size={24} />
-                        </div>
 
-                        {/* right arrow */}
-                        <div onClick={onNext} className='hidden group-hover:block absolute items-center justify-center cursor-pointer top-[50%] right-[5px] rounded-2xl p-[2px] bg-white/30'>
-                            <FaAngleRight color='black' size={24} />
-                        </div>
-
-                        {/* dots */}
-                        <div className='absolute flex bottom-[5px] left-[50%] '>
-                            {carouselData.map((_, slideIndex) => (
-                                <RxDotFilled key={slideIndex} onClick={() => { goToSlide(slideIndex) }} className='cursor-pointer' color={slideIndex === currentIndex ? 'red' : 'white'} size={16} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </div>
-        </>
+
+
+
+        </div>
     )
 }
 
 export default Categories
-
-

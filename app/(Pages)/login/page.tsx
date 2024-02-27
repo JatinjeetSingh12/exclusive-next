@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import LoginForm from '../components/LoginForm'
+import LoginForm from '../../components/auth/LoginForm'
 
 const login = () => {
   

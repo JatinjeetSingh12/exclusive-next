@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import SignupForm from '../components/SignupForm'
+import SignupForm from '../../components/auth/SignupForm'
 
 
 const signup = () => {
