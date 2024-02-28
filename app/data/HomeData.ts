@@ -180,3 +180,72 @@ export const monthProduct: ProductCard[] = [
         image: require('@/public/products/wooden-cabin.png')
     },
 ]
+
+
+
+export const ExploreProductsData:ProductCard[] = [
+    {
+        name: 'Breed Dry Dog Food',
+        price: 360,
+        discountPrice: 360,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/dog-food.png')
+    },
+    {
+        name: 'CANON EOS DSLR Camera',
+        price: 660,
+        discountPrice: 960,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/nexon-camera.png')
+    },
+    {
+        name: 'ASUS FHD Gaming Laptop',
+        price: 170,
+        discountPrice: 160,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/laptop.png')
+    },
+    {
+        name: 'Curology Product Set',
+        price: 170,
+        discountPrice: 160,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/face-wash.png')
+    },
+    {
+        name: 'Kids Electric Car',
+        price: 360,
+        discountPrice: null,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/toy.png')
+    },
+    {
+        name: 'Jr. Zoom Soccer Cleats',
+        price: 660,
+        discountPrice: 960,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/shoes.png')
+    },
+    {
+        name: 'GP11 Shooter USB Gamepad',
+        price: 170,
+        discountPrice: 160,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/gamepad.png')
+    },
+    {
+        name: 'Quilted Satin Jacket',
+        price: 360,
+        discountPrice: null,
+        rating: 5,
+        ratingCount: 65,
+        image: require('@/public/products/jacket.png')
+    },
+]

@@ -16,7 +16,7 @@ const TodaySale = () => {
     return (
         <div className='w-full flex flex-col items-end mt-[20px] justify-center '>
 
-            <div className='w-[93%]  '>
+            <div className='w-[93%]'>
 
                 <div className='flex items-center gap-[15px]'>
                     <div style={{ backgroundColor: Colors.red }} className='w-[20px] rounded-sm  h-[40px]'>
@@ -90,13 +90,13 @@ const TodaySale = () => {
                     </div>
                 </Carousel>
 
-
+                <div className='flex items-center justify-center mt-[40px]'>
+                    <Button style={{ backgroundColor: Colors.red }} >View All Products</Button>
+                </div>
 
 
 
             </div>
-
-
 
         </div>
     )

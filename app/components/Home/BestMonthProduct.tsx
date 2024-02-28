@@ -1,7 +1,7 @@
 import { monthProduct } from '@/app/data/HomeData'
 import { Colors } from '@/app/styles/Colors'
 import React from 'react'
-import ProductCard from '../custom/productCard'
+import ProductCard from '../custom/ProductCard'
 import { Button } from '@/components/ui/button'
 
 const BestMonthProduct = () => {
