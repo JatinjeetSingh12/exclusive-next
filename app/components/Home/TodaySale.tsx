@@ -1,4 +1,4 @@
-import { TodaySaleData } from '@/app/data/HomeData';
+import { Products } from '@/app/data/HomeData';
 import Image from 'next/image';
 import React from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -13,6 +13,11 @@ import { Button } from "@/components/ui/button"
 
 
 const TodaySale = () => {
+
+
+    const todaySaleProduct = Products.filter(item=>item.type=="today");
+
+
     return (
         <div className='w-full flex flex-col items-end mt-[20px] justify-center '>
 
@@ -36,10 +41,10 @@ const TodaySale = () => {
                     className="w-full "
                 >
                     <CarouselContent className='mt-[20px]'>
-                        {TodaySaleData.map((item, index) => (
+                        {todaySaleProduct.map((item, index) => (
                             <CarouselItem key={index} className="cursor-pointer md:basis-1/2 relative lg:basis-1/4 gap-[20px] group max-w-[300px] min-w-[300px]">
                                 <div style={{ backgroundColor: Colors.productBg }} className='flex flex-col rounded-md items-center justify-center w-full max-h-[270px] min-h-[270px] relative'>
-                                    <Image className='transition ease-in-out group-hover:translate-y-[-20px] w-[170px] h-[170px]' src={item.img} alt='img' />
+                                    <Image className='transition ease-in-out group-hover:translate-y-[-20px] w-[170px] h-[170px]' src={item.image} alt='img' />
                                     <div className='absolute top-0 left-0 right-0 bottom-0 '>
                                         <div className=' h-full w-full flex flex-col justify-between'>
 

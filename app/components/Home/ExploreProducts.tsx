@@ -1,10 +1,17 @@
-import { ExploreProductsData } from '@/app/data/HomeData'
+import {  Products } from '@/app/data/HomeData'
 import { Colors } from '@/app/styles/Colors'
 import { Button } from '@/components/ui/button'
 import React from 'react'
-import ProductCard from '../custom/productCard'
+import ProductCard from '../custom/ProductCard'
 
 const ExploreProducts = () => {
+
+
+
+    const todaySaleProduct = Products.filter(item=>item.type=="explore");
+
+    
+
     return (
         <div className='w-full flex flex-col items-center justify-center '>
 
@@ -22,8 +29,8 @@ const ExploreProducts = () => {
 
 
                 <div className='flex flex-wrap gap-[30px] items-center pl-[20px] m-auto'>
-                    {ExploreProductsData.map((item, index) => (
-                        <div className='mt-[20px]'>
+                    {todaySaleProduct.map((item, index) => (
+                        <div key={index} className='mt-[20px]'>
                             <ProductCard index={index} item={item} />
                         </div>
                     ))}

@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       <Carousel />
       <TodaySale />
-      <Line />
+      <Line  />
       <Categories />
       <Line />
       <BestMonthProduct />

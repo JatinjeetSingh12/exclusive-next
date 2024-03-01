@@ -4,6 +4,7 @@ import { FaRegHeart, FaStar } from 'react-icons/fa'
 import Image from 'next/image'
 import { IoMdEye } from 'react-icons/io'
 import { ProductCard } from '@/app/data/HomeData'
+import Link from 'next/link'
 
 
 type Props = {
@@ -13,7 +14,7 @@ type Props = {
 
 const ProductCard:FC<Props> = ({index,item}) => {
     return (
-        <div key={index} className="cursor-pointer  relative   group max-w-[250px]  min-w-[250px]">
+        <div  key={index} className="cursor-pointer  relative   group max-w-[250px]  min-w-[250px]">
             <div style={{ backgroundColor: Colors.productBg }} className='flex flex-col rounded-md items-center justify-center w-full max-h-[270px] min-h-[270px] relative'>
                 <Image className='transition ease-in-out group-hover:translate-y-[-20px] w-[170px] h-[170px]' src={item.image} alt='img' />
                 <div className='absolute top-0 left-0 right-0 bottom-0 '>
@@ -27,9 +28,11 @@ const ProductCard:FC<Props> = ({index,item}) => {
                                 <div className='p-[7px] bg-white rounded-2xl grid place-self-center'>
                                     <FaRegHeart className='cursor-pointer' color='black' size={18} />
                                 </div>
-                                <div className='p-[7px] bg-white rounded-2xl grid place-self-center'>
+                                <Link href={{href:'/product-details/[id]_[type]'}} as={`/product-details/${item?.slug}_${item?.type}`}>
+                                <div  className='p-[7px] bg-white rounded-2xl grid place-self-center'>
                                     <IoMdEye className='cursor-pointer' color='black' size={20} />
                                 </div>
+                                </Link>
                             </div>
                         </div>
                         <div className='hidden group-hover:block '>

@@ -37,7 +37,7 @@ const NewArrival = () => {
                     </div>
 
                     <div className='flex flex-col justify-between '>
-                        <div className='  relative w-[550px] cursor-pointer rounded-md h-[260px] bg-black'>
+                        <div className='relative w-[550px] cursor-pointer rounded-md h-[260px] bg-black'>
                             <Image src={require('@/public/products/women-collection.png')} alt='img' className='rounded-md w-full h-full' />
 
                             <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }} className='flex  absolute  top-0 right-0 left-0 bottom-0'>
