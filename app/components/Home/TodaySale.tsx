@@ -21,7 +21,7 @@ const TodaySale = () => {
     return (
         <div className='w-full flex flex-col items-end mt-[20px] justify-center '>
 
-            <div className='w-[93%]'>
+            <div className='w-[96%]   md:w-[99%] lg:w-[96%]' >
 
                 <div className='flex items-center gap-[15px]'>
                     <div style={{ backgroundColor: Colors.red }} className='w-[20px] rounded-sm  h-[40px]'>
@@ -42,7 +42,8 @@ const TodaySale = () => {
                 >
                     <CarouselContent className='mt-[20px]'>
                         {todaySaleProduct.map((item, index) => (
-                            <CarouselItem key={index} className="cursor-pointer md:basis-1/2 relative lg:basis-1/4 gap-[20px] group max-w-[300px] min-w-[300px]">
+                            
+                            <CarouselItem key={index} className="cursor-pointer  basis-1/4 md:basis-1/2 relative lg:basis-1/4 gap-[20px] group max-w-[300px] min-w-[300px]">
                                 <div style={{ backgroundColor: Colors.productBg }} className='flex flex-col rounded-md items-center justify-center w-full max-h-[270px] min-h-[270px] relative'>
                                     <Image className='transition ease-in-out group-hover:translate-y-[-20px] w-[170px] h-[170px]' src={item.image} alt='img' />
                                     <div className='absolute top-0 left-0 right-0 bottom-0 '>
@@ -89,13 +90,13 @@ const TodaySale = () => {
                         ))}
                     </CarouselContent>
 
-                    <div className='absolute top-[-23px] right-[100px] '>
+                    <div className='absolute hidden md:block top-[-23px] right-[100px] '>
                         <CarouselPrevious />
                         <CarouselNext />
                     </div>
                 </Carousel>
 
-                <div className='flex items-center justify-center mt-[40px]'>
+                <div className='flex items-center justify-center my-[40px]'>
                     <Button style={{ backgroundColor: Colors.red }} >View All Products</Button>
                 </div>
 

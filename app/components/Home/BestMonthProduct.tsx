@@ -10,9 +10,9 @@ const BestMonthProduct = () => {
     const monthProductData = Products.filter(item=>item.type=="month");
 
     return (
-        <div className='w-full flex flex-col items-center justify-center '>
+        <div className='w-full flex flex-col items-center mt-[20px] justify-center '>
 
-            <div className='w-[85%] '>
+            <div className='w-[92%]  md:w-[98%] lg:w-[91%]  '>
 
                 <div className='flex items-center gap-[15px]'>
                     <div style={{ backgroundColor: Colors.red }} className='w-[20px] rounded-sm  h-[40px]'>
@@ -25,7 +25,7 @@ const BestMonthProduct = () => {
                 </div>
 
 
-                <div className='flex flex-wrap gap-[30px] items-center pl-[20px] m-auto'>
+                <div className='flex flex-wrap gap-[30px] lg:justify-normal justify-center items-center pl-[20px] m-auto'>
                     {monthProductData.map((item, index) => (
                         <div key={index} className='mt-[20px]'>
                             <ProductCard index={index} item={item} />

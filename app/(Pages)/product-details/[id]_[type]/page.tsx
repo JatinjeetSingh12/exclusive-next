@@ -10,10 +10,7 @@ type ParamsType = {
     type: string;
 }
 
-const page = ({ params }: { params: ParamsType }) => {
-
-
-    
+const page = ({ params }: { params: ParamsType }) => { 
 
     return (
         <div className='flex flex-col items-center justify-center'>

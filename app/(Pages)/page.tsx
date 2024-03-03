@@ -21,7 +21,7 @@ export default function Home() {
       <ImageSale />
       <ExploreProducts />
       <NewArrival />
-      <CustomerService />
+      <CustomerService /> 
     </div>
   );
 }

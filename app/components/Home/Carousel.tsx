@@ -46,24 +46,28 @@ const Carousel = () => {
     }, [currentIndex]);
 
     return (
-        <>
-            <div className='flex max-h-[350px]  '>
-                <div className='flex  w-[20%] justify-end pr-[10px] border-r-2'>
-                    <div className='flex  mt-[20px] gap-[14px] flex-col align-center w-[60%]   '>
-                        {categories.map((item: Categories) => (
-                            <div className='flex justify-between'
-                                key={item.id}>
-                                <p className='text-[16px] font-semibold'>{item.name}</p>
-                                {item.subCategoriesCheck &&
-                                    <p>{">"}</p>
-                                }
-                            </div>
-                        ))}
+        <div>
+            <div className='flex h-[200px] md:h-[350px]  '>
+
+                <div className='w-[20%] hidden md:block'>
+
+                    <div className='flex    justify-end pr-[10px] border-r-2'>
+                        <div className='flex  lg:mt-[20px] mt-[10px] lg:gap-[14px] gap-[8px] flex-col align-center lg:w-[80%] w-[95%]   '>
+                            {categories.map((item: Categories) => (
+                                <div className='flex justify-between'
+                                    key={item.id}>
+                                    <p className='text-[16px] font-semibold'>{item.name}</p>
+                                    {item.subCategoriesCheck &&
+                                        <p>{">"}</p>
+                                    }
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 {/* carousal */}
-                <div className='flex w-[80%]'>
+                <div className='flex md:w-[80%]  w-[100%]'>
                     <div className='w-[85%]  h-[90%] m-auto relative group '>
 
                         <Image priority src={carouselData[currentIndex].image} alt='img' className='w-full h-full absolute rounded-sm' />
@@ -79,7 +83,7 @@ const Carousel = () => {
                         </div>
 
                         {/* dots */}
-                        <div className='absolute flex bottom-[5px] left-[50%] '>
+                        <div className='absolute flex  left-[40%] md:left-[50%] bottom-0 '>
                             {carouselData.map((_, slideIndex) => (
                                 <RxDotFilled key={slideIndex} onClick={() => { goToSlide(slideIndex) }} className='cursor-pointer' color={slideIndex === currentIndex ? 'red' : 'white'} size={16} />
                             ))}
@@ -87,7 +91,7 @@ const Carousel = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

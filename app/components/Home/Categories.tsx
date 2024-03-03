@@ -6,9 +6,9 @@ import React from 'react'
 
 const Categories = () => {
     return (
-        <div className='w-full flex flex-col items-center justify-center '>
+        <div className='w-full mt-[20px] flex flex-col items-center justify-center '>
 
-            <div className='w-[85%]  '>
+            <div className='w-[92%] md:w-[98%] lg:w-[91%]'>
 
                 <div className='flex items-center gap-[15px]'>
                     <div style={{ backgroundColor: Colors.red }} className='w-[20px] rounded-sm  h-[40px]'>
@@ -36,7 +36,7 @@ const Categories = () => {
                         ))}
                     </CarouselContent>
 
-                    <div className='absolute top-[-23px] right-[100px] '>
+                    <div className='absolute hidden md:block top-[-23px] right-[100px] '>
                         <CarouselPrevious />
                         <CarouselNext />
                     </div>
